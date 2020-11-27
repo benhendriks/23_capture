@@ -1,11 +1,10 @@
 import React from "react";
+import AboutUs from "./pages/AboutUs";
 
 function App() {
-  const location = useLocation();
-
   return (
     <div className="App">
-      
+      <AboutUs />
     </div>
   );
 }
