@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const NavStyle = styled.nav`
@@ -35,22 +36,22 @@ const Nav = () => {
     <NavStyle>
       <nav>
         <h1>
-          <a id="logo" href="#">Capture</a>
+          <Link id="logo" to="/">Capture</Link>
         </h1>
         <ul>
           <li>
-            <a href="#">About Us</a>
+            <Link to="/about">About Us</Link>
           </li>
           <li>
-            <a href="#">Our Work</a>
+            <Link to="/work">Our Work</Link>
           </li>
           <li>
-            <a href="#">Contact Us</a>
+            <Link to="/contact">Contact Us</Link>
           </li>
         </ul>
       </nav>
     </NavStyle>
-  )
-}
+  );
+};
 
 export default Nav;

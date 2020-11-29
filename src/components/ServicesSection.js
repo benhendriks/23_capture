@@ -73,7 +73,7 @@ const ServicesSection = () => {
         <img src={home2} alt="Camera"/>
       </div>
     </ServiceStyle>
-  )
-}
+  );
+};
 
 export default ServicesSection;

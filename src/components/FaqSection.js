@@ -84,7 +84,7 @@ const FaqSection = () => {
         </div>
       </div>
     </FaqStyle>
-  )
-}
+  );
+};
 
 export default FaqSection;

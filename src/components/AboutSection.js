@@ -32,7 +32,7 @@ const AboutSection = () => {
         <img src={home1} alt="Guy with a camera"/>
       </div>
     </HomeStyle>
-  )
-}
+  );
+};
 
 export default AboutSection;
