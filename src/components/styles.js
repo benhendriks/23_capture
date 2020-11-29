@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const HomeStyle = styled.div`
-  margin: 3rem;
+  margin: 20px;
   min-height: 90vh;
   display: flex;
   align-items: center;

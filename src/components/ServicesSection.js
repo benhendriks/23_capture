@@ -12,7 +12,6 @@ const ServiceStyle = styled(HomeStyle)`
     display: flex;
     flex-wrap: wrap;
     .card {
-      flex-basis: 20rem;
       .icon {
         display: flex;
         align-items: center;
