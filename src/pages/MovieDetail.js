@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import { MovieState } from '../movieState';
+import { motion } from 'framer-motion';
+import { pageAnimation } from '../animation';
 
-const DetailStyle = styled.div`
+const DetailStyle = styled(motion.div)`
   color: #fff;
     min-height: 100vh;
     padding-top: 20vh;
@@ -68,7 +70,7 @@ const Award = ({ title, description }) => {
 const MovieDetail = () => {
   const history = useHistory();
   const url = history.location.pathname; 
-  const [movies, setMovies] = useState(MovieState);
+  const [movies] = useState(MovieState);
   const [movie, setMovie] = useState(null);
     useEffect(() => {
       const currentMovie = movies.filter((stateMovie) => stateMovie.url === url);
@@ -77,7 +79,12 @@ const MovieDetail = () => {
   return (
     <>
       {movie && (
-        <DetailStyle>
+        <DetailStyle 
+          exit="exit" 
+          variants={pageAnimation} 
+          initial="hidden" 
+          animate="show"
+        >
           <h2>{movie.title}</h2>
             <img src={movie.mainImg} alt={movie.name} />
           <Awards>
