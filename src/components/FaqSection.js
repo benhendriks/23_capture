@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import HomeStyle from './styles';
+import Toggle from './Toggle';
 
 const FaqStyle = styled(HomeStyle)`
   display: block;
@@ -32,44 +33,50 @@ const FaqStyle = styled(HomeStyle)`
 const FaqSection = () => {
   return (
     <FaqStyle>
-      <div className="faq">
-        <h2>Any Questions?<span>FAQ</span></h2>
-        <div className="question">
-          <h4>How do i start?</h4>
-          <div className="answer">
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. At iusto cupiditate amet eum eos sed distinctio nisi nam iste, omnis, atque, quod assumenda?
-            </p>
+      <h2>Any Questions?<span>FAQ</span></h2>
+        <Toggle>
+          <div className="question">
+            <h4>How do i start?</h4>
+              <div className="answer">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. At iusto cupiditate amet eum eos sed distinctio nisi nam iste, omnis, atque, quod assumenda?
+                </p>
+              </div>
+              <div className="faq-line"></div>
           </div>
-          <div className="faq-line"></div>
-        </div>
-        <div className="question">
-          <h4>Daily Schedule?</h4>
-          <div className="answer">
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. At iusto cupiditate amet eum eos sed distinctio nisi nam iste, omnis, atque, quod assumenda?
-            </p>
+        </Toggle>
+        <Toggle>
+          <div className="question">
+            <h4>Daily Schedule?</h4>
+            <div className="answer">
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. At iusto cupiditate amet eum eos sed distinctio nisi nam iste, omnis, atque, quod assumenda?
+              </p>
+            </div>
+            <div className="faq-line"></div>
           </div>
-          <div className="faq-line"></div>
-        </div>
-        <div className="question">
-          <h4>Different Payment Methods?</h4>
-          <div className="answer">
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. At iusto cupiditate amet eum eos sed distinctio nisi nam iste, omnis, atque, quod assumenda?
-            </p>
+        </Toggle>
+        <Toggle>
+          <div className="question">
+            <h4>Different Payment Methods?</h4>
+            <div className="answer">
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. At iusto cupiditate amet eum eos sed distinctio nisi nam iste, omnis, atque, quod assumenda?
+              </p>
+            </div>
+            <div className="faq-line"></div>
           </div>
-          <div className="faq-line"></div>
-        </div>
+      </Toggle>
+      <Toggle>
         <div className="question">
           <h4>What Products do you offer?</h4>
           <div className="answer">
@@ -82,8 +89,8 @@ const FaqSection = () => {
           </div>
           <div className="faq-line"></div>
         </div>
-      </div>
-    </FaqStyle>
+    </Toggle>
+  </FaqStyle>
   );
 };
 
