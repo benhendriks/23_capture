@@ -1,39 +1,44 @@
 import React from 'react';
 import home1 from '../img/home1.png';
-import HomeStyle from './styles';
 import { motion } from 'framer-motion';
 import { titleAnim, fade, photoAnim } from '../animation';
 import Wave from './Wave';
+import styled from 'styled-components';
+import { HomeStyle, Description, Image } from './styles';
+
+const Hide = styled.div`
+  overflow: hidden;
+`;
 
 const AboutSection = () => {
   return(
     <HomeStyle>
-      <div className="description">
+      <Description>
         <motion.div>
-          <div className="hide">
+          <Hide>
             <motion.h2 variants={titleAnim}>
               We work to make 
             </motion.h2>
-          </div>
-          <div className="hide">
+          </Hide>
+          <Hide>
             <motion.h2 variants={titleAnim}>
               your <span>dreams</span> come
             </motion.h2>
-          </div>
-          <div className="hide">
+          </Hide>
+          <Hide>
             <motion.h2 variants={titleAnim}>
               true. 
             </motion.h2>
-          </div>
+          </Hide>
         </motion.div>
         <motion.p variants={fade}>
           Contact us for any photography or videography idears that you have. We have professionals with the skill set you need!
         </motion.p>
         <motion.button variants={fade}>Contact us</motion.button>
-      </div>
-      <div className="image">
+      </Description>
+      <Image>
         <motion.img variants={photoAnim} src={home1} alt="Guy with a camera"/>
-      </div>
+      </Image>
       <Wave />
     </HomeStyle>
   );

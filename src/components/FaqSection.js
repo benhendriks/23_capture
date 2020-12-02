@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import HomeStyle from './styles';
+import { HomeStyle } from './styles';
 import Toggle from './Toggle';
 import { AnimateSharedLayout } from 'framer-motion';
+import { useScroll } from './useScroll';
+import { scrollReveal } from '../animation';
 
 const FaqStyle = styled(HomeStyle)`
   display: block;
@@ -32,8 +34,9 @@ const FaqStyle = styled(HomeStyle)`
 `;
 
 const FaqSection = () => {
+  const [element, controls] = useScroll();
   return (
-    <FaqStyle>
+    <FaqStyle variants={scrollReveal} ref={element} animate={controls} initial="hidden">
       <h2>Any Questions?<span>FAQ</span></h2>
       <AnimateSharedLayout>
         <Toggle title="How do i start?">

@@ -4,26 +4,12 @@ import diaphragm from '../img/diaphragm.svg';
 import money from '../img/money.svg';
 import teamwork from '../img/teamwork.svg';
 import home2 from '../img/home2.png';
-import HomeStyle from './styles';
+import { HomeStyle, Description, Image } from './styles';
 import styled from 'styled-components';
+import { scrollReveal } from '../animation';
+import { useScroll } from './useScroll';
 
 const ServiceStyle = styled(HomeStyle)`
-  .cards {
-    display: flex;
-    flex-wrap: wrap;
-    .card {
-      .icon {
-        display: flex;
-        align-items: center;
-        h3 {
-          margin-left: 1rem;
-          background: white;
-          color: black;
-          padding: 1rem; 
-        }
-      }
-    }
-  }
   h2 {
     padding-bottom: 5rem;
   }
@@ -33,45 +19,65 @@ const ServiceStyle = styled(HomeStyle)`
   }
 `;
 
+const Cards = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 20rem;
+`;
+
+const Card = styled.div`
+  .icon {
+    display: flex;
+    align-items: center;
+    h3 {
+      margin-left: 1rem;
+      background: white;
+      color: black;
+      padding: 1rem; 
+    }
+  }
+`;
+
 const ServicesSection = () => {
+  const [element, controls] = useScroll();
   return (
-    <ServiceStyle>
-      <div className="description">
+    <ServiceStyle variants={scrollReveal} animate={controls} initial="hidden" ref={element}>
+      <Description>
         <h2>High <span>quality</span> services</h2>
-        <div className="cards">
-          <div className="card">
+        <Cards>
+          <Card>
             <div className="icon">
               <img src={clock} alt="clock"/>
-              <h3>Efficient</h3>
+                <h3>Efficient</h3>
             </div>
               <p>Lorem, ipsum dolor sit amet elit. </p>
-          </div>
-          <div className="card">
+          </Card>
+          <Card>
             <div className="icon">
               <img src={diaphragm} alt="diaphragm"/>
-              <h3>Diaphragm</h3>
+                <h3>Diaphragm</h3>
             </div>
               <p>Lorem, ipsum dolor sit amet elit. </p>
-          </div>
-          <div className="card">
+          </Card>
+          <Card>
             <div className="icon">
               <img src={money} alt="money"/>
-              <h3>Affordable</h3>
+                <h3>Affordable</h3>
             </div>
               <p>Lorem, ipsum dolor sit amet elit. </p>
-          </div>
-          <div className="card">
+          </Card>
+          <Card>
             <div className="icon">
               <img src={teamwork} alt="teamwork"/>
-              <h3>Teamwork</h3>
+                <h3>Teamwork</h3>
             </div>
               <p>Lorem, ipsum dolor sit amet elit. </p>
-          </div>
-        </div>
-      </div>
-      <div className="image">
+          </Card>
+        </Cards>
+      </Description>
+      <Image>
         <img src={home2} alt="Camera"/>
-      </div>
+      </Image>
     </ServiceStyle>
   );
 };
