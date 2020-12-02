@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import HomeStyle from './styles';
 import Toggle from './Toggle';
+import { AnimateSharedLayout } from 'framer-motion';
 
 const FaqStyle = styled(HomeStyle)`
   display: block;
@@ -34,51 +35,8 @@ const FaqSection = () => {
   return (
     <FaqStyle>
       <h2>Any Questions?<span>FAQ</span></h2>
-        <Toggle>
-          <div className="question">
-            <h4>How do i start?</h4>
-              <div className="answer">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. At iusto cupiditate amet eum eos sed distinctio nisi nam iste, omnis, atque, quod assumenda?
-                </p>
-              </div>
-              <div className="faq-line"></div>
-          </div>
-        </Toggle>
-        <Toggle>
-          <div className="question">
-            <h4>Daily Schedule?</h4>
-            <div className="answer">
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. At iusto cupiditate amet eum eos sed distinctio nisi nam iste, omnis, atque, quod assumenda?
-              </p>
-            </div>
-            <div className="faq-line"></div>
-          </div>
-        </Toggle>
-        <Toggle>
-          <div className="question">
-            <h4>Different Payment Methods?</h4>
-            <div className="answer">
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. At iusto cupiditate amet eum eos sed distinctio nisi nam iste, omnis, atque, quod assumenda?
-              </p>
-            </div>
-            <div className="faq-line"></div>
-          </div>
-      </Toggle>
-      <Toggle>
-        <div className="question">
-          <h4>What Products do you offer?</h4>
+      <AnimateSharedLayout>
+        <Toggle title="How do i start?">
           <div className="answer">
             <p>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -87,9 +45,38 @@ const FaqSection = () => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. At iusto cupiditate amet eum eos sed distinctio nisi nam iste, omnis, atque, quod assumenda?
             </p>
           </div>
-          <div className="faq-line"></div>
+        </Toggle>
+        <Toggle title="Daily Schedule?">
+          <div className="answer">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. At iusto cupiditate amet eum eos sed distinctio nisi nam iste, omnis, atque, quod assumenda?
+            </p>
+          </div>
+        </Toggle>
+        <Toggle title="Different Payment Methods?">
+          <div className="answer">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. At iusto cupiditate amet eum eos sed distinctio nisi nam iste, omnis, atque, quod assumenda?
+            </p>
+          </div>
+      </Toggle>
+      <Toggle title="What Products do you offer?">
+        <div className="answer">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. At iusto cupiditate amet eum eos sed distinctio nisi nam iste, omnis, atque, quod assumenda?
+          </p>
         </div>
-    </Toggle>
+      </Toggle>
+    </AnimateSharedLayout>
   </FaqStyle>
   );
 };
