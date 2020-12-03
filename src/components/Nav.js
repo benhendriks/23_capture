@@ -1,9 +1,10 @@
-import { motion } from 'framer-motion';
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { useLocation } from 'react-router-dom';
 
-const NavStyle = styled(motion.div)`
+const NavStyle = styled.div`
   min-height: 10vh;
   display: flex;
   margin: auto;
@@ -48,22 +49,47 @@ const NavStyle = styled(motion.div)`
       }
     }
 `;
+const Line = styled(motion.div)`
+  height: 0.3rem;
+  background: #23d997;
+  width: 0%;
+  bottom: -80%;
+  left: 60%;
+`;
 
 const Nav = () => {
+  const {pathname} = useLocation();
   return (
     <NavStyle>
       <h1>
-        <Link id="logo" to="/">Capture</Link>
+        <Link id="logo" to="/">
+          Capture
+        </Link>
       </h1>
       <ul>
         <li>
           <Link to="/">About Us</Link>
+          <Line 
+            transition={{ duration: 0.75 }} 
+            initial={{ width: '0%' }} 
+            animate={{ width: pathname === '/' ? '100%' : '0%' }} 
+          />
         </li>
         <li>
           <Link to="/work">Our Work</Link>
+          <Line 
+            transition={{ duration: 0.75 }} 
+            initial={{ width: '0%' }} 
+            animate={{ width: pathname === '/work' ? '100%' : '0%' }} 
+          />
         </li>
         <li>
           <Link to="/contact">Contact Us</Link>
+          <Line 
+            transition={{ duration: 0.75 }} 
+            initial={{ width: '0%' }} 
+            animate={{ width: pathname === '/contact' ? '100%' : '0%' }} 
+          />
         </li>
       </ul>
     </NavStyle>
