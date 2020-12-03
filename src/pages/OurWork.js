@@ -7,6 +7,7 @@ import goodtimes from '../img/goodtimes-small.png';
 import { motion } from 'framer-motion';
 import { sliderContainer, pageAnimation, fade, photoAnim, lineAnim, slider } from '../animation';
 import { useScroll } from '../components/useScroll';
+import ScrollTop from '../components/ScollTop';
 
 
 const WorkStyle = styled(motion.div)`
@@ -98,6 +99,7 @@ const OurWork = () => {
           <motion.img variants={photoAnim} src={goodtimes} alt="goodtimes"/>
         </Link>
       </Movie>
+      <ScrollTop />
     </WorkStyle>
   );
 };
